@@ -105,7 +105,7 @@
   </div>
 
   <script>
-    // Toggle password visibility
+   
     document.getElementById("showPassword").addEventListener("change", function() {
       const password = document.getElementById("password");
       const repassword = document.getElementById("repassword");
@@ -118,7 +118,6 @@
       }
     });
 
-    // Login form submit
     document.getElementById("loginForm").addEventListener("submit", function(e){
       e.preventDefault();
       const email = document.getElementById("email").value;
@@ -130,14 +129,14 @@
         return;
       }
 
-      // Simpan ke localStorage (simulasi login)
       localStorage.setItem("loggedIn", "true");
       localStorage.setItem("userEmail", email);
-      window.location.href = "form.html"; // pindah ke main web
+      window.location.href = "form.html";  
 
 
-      window.location.href = "form.html"; // pindah ke main web
+      window.location.href = "form.html"; 
     });
   </script>
 </body>
 </html>
+
