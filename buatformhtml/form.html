@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Web Interaktif</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    /* Navigation */
+    nav {
+      background: #34495e;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #1abc9c;
+    }
+
+    /* Layout */
+    .container {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .sidebar {
+      background: #ecf0f1;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar li {
+      margin: 10px 0;
+    }
+    .sidebar a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .sidebar a:hover {
+      color: #1abc9c;
+    }
+
+    .content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background: #1abc9c;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background: #f2f2f2;
+    }
+
+    /* Form */
+    .form-container {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .form-container h2 {
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: #1abc9c;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #16a085;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background: #2c3e50;
+      color: white;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  🌐 Website Latihan Interaktif
+  <button id="logoutBtn" style="
+    float:right; 
+    padding:8px 12px; 
+    margin-top:-5px; 
+    background:#e74c3c; 
+    color:#fff; 
+    border:none; 
+    border-radius:6px; 
+    cursor:pointer;">
+    Logout
+  </button>
+</header>
+<nav>
+  <a href="#tabel">Tabel</a>
+  <a href="#form">Form</a>
+  <a href="#frame">Frame</a>
+</nav>
+
+<div class="container">
+  <aside class="sidebar">
+    <h3>Sidebar</h3>
+    <ul>
+      <li><a href="#tabel">Data Mahasiswa</a></li>
+      <li><a href="#form">Registrasi</a></li>
+      <li><a href="#frame">Frame Layout</a></li>
+    </ul>
+  </aside>
+
+  <main class="content">
+    <!-- Tabel -->
+    <section id="tabel">
+  <h2>Tabel Daftar Nilai Mahasiswa</h2>
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>NRP</th>
+        <th>Nama</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Contact</th>
+        <th>ETS</th>
+        <th>EAS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Baris akan di-render lewat JavaScript -->
+    </tbody>
+  </table>
+</section>
+    <!-- Form -->
+    <section id="form">
+      <h2>Registration Form</h2>
+      <div class="form-container">
+        <form id="registerForm">
+          <div class="form-group">
+            <label>NRP</label>
+            <input type="text" name="nrp" required>
+          </div>
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" name="firstname" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="lastname" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" required>
+          </div>
+          <div class="form-group">
+            <label>Re-type Password</label>
+            <input type="password" name="repassword" required>
+          </div>
+          <div class="form-group">
+            <label>Contact</label>
+            <input type="number" name="contact">
+          </div>
+          <div class="form-group">
+            <label>Gender</label>
+            <select name="gender" required>
+              <option value="">--Select--</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Nilai ETS</label>
+            <input type="number" name="ets" required>
+          </div>
+          <div class="form-group">
+            <label>Nilai EAS</label>
+            <input type="number" name="eas" required>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Frame -->
+    <section id="frame">
+      <h2>Frame Layout</h2>
+      <iframe src="https://www.wikipedia.org" width="100%" height="300" style="border:1px solid #ccc; border-radius:8px;"></iframe>
+    </section>
+  </main>
+</div>
+
+<!-- Musik -->
+<section id="musik" style="padding:20px;">
+  <h2>Putar Musik</h2>
+  <audio controls>
+    <source src="lagu.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung pemutar audio.
+  </audio>
+</section>
+
+<footer>
+  &copy; 2025 Arya Rangga Putra Pratama. All rights reserved. copyright.
+</footer>
+
+<script>
+const tableBody = document.querySelector("#dataTable tbody");
+const registerForm = document.getElementById("registerForm");
+
+// Data default 2 mahasiswa
+const defaultData = [
+  {nrp:"5025241001", firstname:"Amin A.", lastname:"Angkasa", email:"amin@example.com", gender:"Male", contact:"0812345678", ets:85, eas:88},
+  {nrp:"5025241002", firstname:"Bella C.", lastname:"Cahaya", email:"bella@example.com", gender:"Female", contact:"0819876543", ets:90, eas:92}
+];
+
+// Ambil data mahasiswa dari localStorage atau gunakan default
+let mahasiswaData = JSON.parse(localStorage.getItem("mahasiswaData"));
+if(!mahasiswaData || mahasiswaData.length === 0){
+  mahasiswaData = defaultData;
+  localStorage.setItem("mahasiswaData", JSON.stringify(mahasiswaData));
+}
+
+// Fungsi render tabel
+function renderTable() {
+  tableBody.innerHTML = "";
+  mahasiswaData.forEach((mhs, index) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${index + 1}</td>
+      <td>${mhs.nrp}</td>
+      <td>${mhs.firstname} ${mhs.lastname}</td>
+      <td>${mhs.email}</td>
+      <td>${mhs.gender}</td>
+      <td>${mhs.contact}</td>
+      <td>${mhs.ets}</td>
+      <td>${mhs.eas}</td>
+    `;
+    tableBody.appendChild(row);
+  });
+}
+
+// Render tabel saat halaman dimuat
+renderTable();
+
+// Event submit form
+registerForm.addEventListener("submit", function(e){
+  e.preventDefault();
+  const formData = new FormData(this);
+  const password = formData.get("password");
+  const repassword = formData.get("repassword");
+
+  if(password !== repassword){
+    alert("Password tidak sama!");
+    return;
+  }
+
+  // Buat objek mahasiswa baru
+  const newMhs = {
+    nrp: formData.get("nrp"),
+    firstname: formData.get("firstname"),
+    lastname: formData.get("lastname"),
+    email: formData.get("email"),
+    gender: formData.get("gender"),
+    contact: formData.get("contact"),
+    ets: formData.get("ets"),
+    eas: formData.get("eas")
+  };
+
+  // Tambahkan ke array dan simpan ke localStorage
+  mahasiswaData.push(newMhs);
+  localStorage.setItem("mahasiswaData", JSON.stringify(mahasiswaData));
+
+  // Render tabel ulang
+  renderTable();
+
+  // Reset form
+  this.reset();
+  alert("Registrasi berhasil ditambahkan ke tabel!");
+});
+
+// Logout
+document.getElementById("logoutBtn").addEventListener("click", function(){
+  localStorage.removeItem("loggedIn");
+  localStorage.removeItem("userEmail");
+  window.location.href = "login.html"; // kembali ke halaman login
+});
+
+// Cek login
+if(localStorage.getItem("loggedIn") !== "true") {
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
